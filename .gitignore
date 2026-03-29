@@ -1,0 +1,25 @@
+# Environment
+.env
+venv/
+__pycache__/
+
+# Data files
+data/*.xlsx
+data/*.xls
+data/*.csv
+output/*.xlsx
+
+# IDE
+.idea/
+.vscode/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Downloads
+*.tmp
+
+# Database
+data/*.db

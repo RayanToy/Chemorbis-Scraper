@@ -1,0 +1,73 @@
+urls:
+  login: "https://www.chemorbis.com/loginForm.do"
+  price_index: "https://www.chemorbis.com/en/price-index/plastics-price-indexes-pp-hdpe-ldpe-lldpe-gpps-hips-pvc-abs-pet"
+  price_wizard: "https://www.chemorbis.com/en/price-wizard/plastics-monomers-price-charts-pp-hdpe-ldpe-lldpe-gpps-hips-pvc-abs-pet"
+
+scraping:
+  max_retries: 5
+  page_load_wait: 10
+  element_wait: 120
+  loop_timeout: 90
+  download_wait: 8
+  retry_delay: 10
+
+input_file: "data/quotes_selection.xlsx"
+
+sheets:
+  price_index: "PriceIndex"
+  price_wizard: "PriceWizard"
+
+currency_usd_code: "840"
+
+output_file: "output/chemorbis_consolidated.xlsx"
+
+quote_replacements:
+  "GPPS Injection - Import  - CIF Türkiye Main Port  (Duties Included)": "GPPS Injection - Import  - CIF Türkiye Main Port , Month Avg"
+  "GPPS Injection - Import (Europe)  - CIF Türkiye Main Port ": "GPPS Injection - Import (Europe)  - CIF Türkiye Main Port , Month Avg"
+  "GPPS Injection - Import (S. Korea)  - CIF Türkiye Main Port ": "GPPS Injection - Import (S. Korea)  - CIF Türkiye Main Port , Month Avg"
+  "GPPS Injection - Local  - Ex-Warehouse Türkiye Main City   (VAT Included)": "GPPS Injection - Local  - Ex-Warehouse Türkiye Main City , Month Avg"
+  "HIPS Injection - Import  - CIF Türkiye Main Port  (Duties Included)": "HIPS Injection - Import  - CIF Türkiye Main Port, Month Avg"
+  "HIPS Injection - Import (Europe)  - CIF Türkiye Main Port ": "HIPS Injection - Import (Europe)  - CIF Türkiye Main Port , Month Avg"
+  "HIPS Injection - Import (S. Korea)  - CIF Türkiye Main Port ": "HIPS Injection - Import (S. Korea)  - CIF Türkiye Main Port , Month Avg"
+  "HIPS Injection - Local  - Ex-Warehouse Türkiye Main City   (VAT Included)": "HIPS Injection - Local  - Ex-Warehouse Türkiye Main City , Month Avg"
+
+quotes_to_remove:
+  - "ABS Inj. (N) - Import (S. Korea)  - CIF Türkiye Main Port "
+  - "ABS Inj. (N) - Local  - Ex-Warehouse Türkiye Main City "
+  - "ABS Inj. (N) - Import  - CIF China Main Port"
+  - "ABS Inj. (N) - Import  - CIF Türkiye Main Port  (Duties Included)"
+  - "ABS Inj. (N) - Import (S. Korea)  - CIF Türkiye Main Port"
+  - "ABS Inj. (N) - Local  - Ex-Warehouse Türkiye Main City"
+  - "SPVC K 67-68 - Import  - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import  - CIF India Main Port"
+  - "SPVC K 67-68 - Import (Dutiable)  - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import (Duty Free)  - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import (NEA)  - CIF India Main Port"
+  - "GPPS Injection - Import (Europe) - CIF Türkiye Main Port , Month Avg"
+  - "GPPS Injection - Import - CIF Türkiye Main Port , Month Avg"
+  - "GPPS Injection - Import (S. Korea)  - CIF Türkiye Main Port , Month Avg"
+  - "GPPS Injection - Local  - Ex-Warehouse Türkiye Main City , Month Avg"
+
+eur_currency_quotes:
+  - "HIPS Injection - Import (Europe) - CIF Türkiye Main Port"
+  - "HIPS Injection - Import (Europe)  - CIF Türkiye Main Port "
+
+exclude_from_space_cleanup:
+  - "ABS Inj. (N) - Import  - CIF China Main Port"
+  - "ABS Inj. (N) - Import - CIF China Main Port"
+  - "ABS Inj. (N) - Import  - CIF Türkiye Main Port  (Duties Included)"
+  - "ABS Inj. (N) - Import - CIF Türkiye Main Port (Duties Included)"
+  - "ABS Inj. (N) - Import (S. Korea)  - CIF Türkiye Main Port "
+  - "ABS Inj. (N) - Import (S. Korea) - CIF Türkiye Main Port"
+  - "ABS Inj. (N) - Local  - Ex-Warehouse Türkiye Main City "
+  - "ABS Inj. (N) - Local - Ex-Warehouse Türkiye Main City"
+  - "SPVC K 67-68 - Import  - CIF Türkiye Main Port "
+  - "SPVC K 67-68 - Import - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import  - CIF India Main Port"
+  - "SPVC K 67-68 - Import - CIF India Main Port"
+  - "SPVC K 67-68 - Import (Dutiable)  - CIF Türkiye Main Port "
+  - "SPVC K 67-68 - Import (Dutiable) - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import (Duty Free)  - CIF Türkiye Main Port "
+  - "SPVC K 67-68 - Import (Duty Free) - CIF Türkiye Main Port"
+  - "SPVC K 67-68 - Import (NEA)  - CIF India Main Port"
+  - "SPVC K 67-68 - Import (NEA) - CIF India Main Port"
